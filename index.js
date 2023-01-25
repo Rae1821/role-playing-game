@@ -11,7 +11,6 @@ function getNewMonster() {
 let isWaiting = false;
 
 function attack() {
-    
 
     if(!isWaiting){
         wizard.setDiceHtml();
@@ -48,7 +47,6 @@ function endGame() {
    
     const endEmoji = wizard.health > 0 ? '🔮' : '💀'
         setTimeout(() => {
-            
             document.body.innerHTML = 
             `<div class="end-game">
                 <h2>Game Over</h2>
@@ -56,6 +54,9 @@ function endGame() {
                 <p class="end-emoji">${endEmoji}</p>
             </div>` 
         }, 1500);
+
+    const startOver = setTimeOut(() => {
+        render()}, 3000);   
 }
 
 
